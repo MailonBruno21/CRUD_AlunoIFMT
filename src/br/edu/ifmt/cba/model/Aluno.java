@@ -41,7 +41,7 @@ public abstract class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" + "matricula=" + matricula + ", nome=" + nome + ", tipoAluno=" + tipoAluno + '}';
+        return "Aluno-> " + "Matricula:" + matricula + ", Nome: " + nome + ", Cursando Ensino " + tipoAluno + " -";
     }
     
     

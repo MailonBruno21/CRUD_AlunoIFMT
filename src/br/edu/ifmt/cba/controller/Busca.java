@@ -1,6 +1,8 @@
 package br.edu.ifmt.cba.controller;
 
 import static br.edu.ifmt.cba.controller.Main.menu;
+import static br.edu.ifmt.cba.controller.Main.qtdAlunos;
+import static br.edu.ifmt.cba.controller.Operacoes.operacoeALunos;
 import br.edu.ifmt.cba.model.Aluno;
 import java.io.IOException;
 import java.util.Scanner;
@@ -16,6 +18,7 @@ public class Busca {
         
         if(guardaAluno[0] == null){
             System.out.println("Nao existe alunos cadastrados");
+            menu();
         }
         
         System.out.println("\n--------------------------------------");
@@ -48,13 +51,13 @@ public class Busca {
                         System.out.println("Digite o Nome:");
                         entrada.nextLine();
                         String nome = entrada.nextLine();
-                        buscar(nome, qtdAluno, guardaAluno, "Superior");
+                        operacoeALunos(buscar(nome, qtdAluno, guardaAluno, "Superior"), guardaAluno);
                         break;
 
                     case 2:
                         System.out.println("Digite o Matricula:");
                         int numeroMatricula = entrada.nextInt();
-                        buscar(numeroMatricula, qtdAluno, guardaAluno, "Superior");
+                        operacoeALunos(buscar(numeroMatricula, qtdAluno, guardaAluno, "Superior"), guardaAluno);
                         break;
 
                     case 3:
@@ -84,13 +87,13 @@ public class Busca {
                         System.out.println("Digite o Nome:");
                         entrada.nextLine();
                         String nome = entrada.nextLine();
-                        buscar(nome, qtdAluno, guardaAluno, "Medio");
+                        operacoeALunos(buscar(nome, qtdAluno, guardaAluno, "Medio"), guardaAluno);
                         break;
 
                     case 2:
                         System.out.println("Digite o Matricula:");
                         int numeroMatricula = entrada.nextInt();
-                        buscar(numeroMatricula, qtdAluno, guardaAluno, "Medio");
+                        operacoeALunos(buscar(numeroMatricula, qtdAluno, guardaAluno, "Medio"), guardaAluno);
                         break;
 
                     case 3:
@@ -121,7 +124,7 @@ public class Busca {
             case "Superior":
                 
                 for (int i = 0; i < qtdAluno; i++) {
-                    if (guardaAluno[i].getNome().equals(nome)) {
+                    if (guardaAluno[i].getNome().equals(nome) && (guardaAluno[i].getTipoAluno().equals(tipoAluno))) {
                         return guardaAluno[i];
                     }
                 }
@@ -160,5 +163,16 @@ public class Busca {
         }
         return null;
     }
+    
+    public static int buscaVetor(Aluno[] guardaAluno, Aluno aluno){
+        for(int i = 0; i < qtdAlunos; i++){
+            if((guardaAluno[i].getNome().equals(aluno.getNome())) && (guardaAluno[i].getMatricula() == aluno.getMatricula())){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }
+
+
