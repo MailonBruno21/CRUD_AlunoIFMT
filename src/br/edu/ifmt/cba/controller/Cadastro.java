@@ -1,5 +1,6 @@
 package br.edu.ifmt.cba.controller;
 
+import static br.edu.ifmt.cba.controller.Main.menu;
 import br.edu.ifmt.cba.model.Aluno;
 import br.edu.ifmt.cba.model.Medio;
 import br.edu.ifmt.cba.model.Superior;
@@ -11,18 +12,13 @@ import java.util.Scanner;
  */
 public class Cadastro {
 
-    
+    public static Aluno cadastrar() {
 
-    public static void cadastrar() {
-        
-        int qtdAlunos = 2;
-        
         int opc;
         String nome;
         int numeroMatricula;
-        
+
         Aluno aluno;
-        Aluno[] guardaAluno = new Aluno[qtdAlunos];
 
         System.out.println("\n--------------------------------------");
         System.out.println("---------- CADASTRO DE ALUNO ---------");
@@ -32,8 +28,7 @@ public class Cadastro {
         System.out.println("\nDigite uma opcao.");
 
         Scanner entrada = new Scanner(System.in);
-        
-        
+
         opc = entrada.nextInt();
 
         switch (opc) {
@@ -49,14 +44,10 @@ public class Cadastro {
                 aluno.setMatricula(numeroMatricula);
                 aluno.setTipoAluno("Superior");
                 
-                for(int i = 0; i < qtdAlunos; i++){
-                    if(guardaAluno == null){
-                       guardaAluno[i] = aluno;
-                    }
-                }
                 
-                break;
-
+                
+                return aluno;
+ 
             case 2:
                 aluno = new Medio();
                 System.out.println("Digite o Nome:");
@@ -67,21 +58,19 @@ public class Cadastro {
                 numeroMatricula = entrada.nextInt();
                 aluno.setMatricula(numeroMatricula);
                 aluno.setTipoAluno("Médio");
-                
-                for(int i = 0; i < qtdAlunos; i++){
-                    if(guardaAluno == null){
-                       guardaAluno[i] = aluno;
-                       break;
-                    }
-                }
-                
+
+                return aluno;
+
+            case 3:
+                menu();
                 break;
             default:
                 System.out.println("Opcao Invalida\n\n");
                 cadastrar();
 
         }
-
+        menu();
+        return null;
     }
 
 }

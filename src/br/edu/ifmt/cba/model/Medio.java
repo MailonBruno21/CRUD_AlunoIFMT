@@ -13,7 +13,7 @@ public class Medio extends Aluno {
 
     
     @Override
-    public String NotaFinal() {
+    public String notaFinal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
