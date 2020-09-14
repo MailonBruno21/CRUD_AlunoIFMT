@@ -132,7 +132,7 @@ public class Busca {
 
             case "Medio":
                 for (int i = 0; i < qtdAluno; i++) {
-                    if ((guardaAluno[i].getNome().equals(nome)) && (guardaAluno[i].getTipoAluno().equals(tipoAluno))) {
+                    if (guardaAluno[i].getNome().equals(nome) && (guardaAluno[i].getTipoAluno().equals(tipoAluno))) {
                         return guardaAluno[i];
                     }
                 }

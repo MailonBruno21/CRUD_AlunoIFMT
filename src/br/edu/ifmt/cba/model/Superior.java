@@ -7,10 +7,9 @@ package br.edu.ifmt.cba.model;
  */
 public class Superior extends Aluno {
 
-    /**
-     *
-     * @return
-     */
+    private String notaFinal;
+    
+    
     @Override
     public String notaFinal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -18,7 +17,7 @@ public class Superior extends Aluno {
 
     @Override
     public void calculoNota() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     

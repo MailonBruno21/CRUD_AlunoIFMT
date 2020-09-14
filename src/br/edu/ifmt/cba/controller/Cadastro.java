@@ -57,7 +57,7 @@ public class Cadastro {
                 System.out.println("Digite o Numero de Matricula:");
                 numeroMatricula = entrada.nextInt();
                 aluno.setMatricula(numeroMatricula);
-                aluno.setTipoAluno("Médio");
+                aluno.setTipoAluno("Medio");
 
                 return aluno;
 
