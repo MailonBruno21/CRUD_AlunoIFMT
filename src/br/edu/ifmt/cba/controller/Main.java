@@ -1,5 +1,6 @@
 package br.edu.ifmt.cba.controller;
 
+import static br.edu.ifmt.cba.controller.AtribuirNota.menuNota;
 import static br.edu.ifmt.cba.controller.Busca.menuBusca;
 import static br.edu.ifmt.cba.controller.Cadastro.cadastrar;
 import br.edu.ifmt.cba.model.Aluno;
@@ -52,7 +53,7 @@ public class Main {
                 menuBusca(qtdAlunos, guardaAluno);
                 break;
             case 3:
-
+                menuNota(guardaAluno);
                 break;
             case 4:
                 System.exit(0);

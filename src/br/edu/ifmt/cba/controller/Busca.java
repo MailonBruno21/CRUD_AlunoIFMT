@@ -172,6 +172,24 @@ public class Busca {
         }
         return -1;
     }
+    
+    public static int buscar(int matricula, int qtdAluno, Aluno[] guardaAluno){
+        for (int i = 0; i < qtdAluno; i++) {
+                    if ((guardaAluno[i].getMatricula() == matricula)) {
+                        return i;
+                    }
+                }
+        return -1;
+    }
+    
+    public static int buscar(String nome, int qtdAluno, Aluno[] guardaAluno){
+        for (int i = 0; i < qtdAluno; i++) {
+            if (guardaAluno[i].getNome().equals(nome)) {
+                 return i;
+            }
+        }
+        return -1;
+    }
 
 }
 
