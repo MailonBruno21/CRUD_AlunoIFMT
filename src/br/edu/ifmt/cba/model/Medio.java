@@ -54,8 +54,9 @@ public class Medio extends Aluno {
     }
 
     @Override
-    public double finalNota() {       
-        return  getNotaF();
+    public String finalNota() { 
+        String nota = String.valueOf(this.notaF);
+        return  nota;
     }
 
     

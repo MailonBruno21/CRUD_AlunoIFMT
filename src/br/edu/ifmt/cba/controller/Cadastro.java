@@ -66,7 +66,7 @@ public class Cadastro {
                 break;
             default:
                 System.out.println("Opcao Invalida\n\n");
-                cadastrar();
+                menu();
 
         }
         menu();

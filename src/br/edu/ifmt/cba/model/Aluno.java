@@ -11,7 +11,7 @@ public abstract class Aluno {
     private String tipoAluno;
     
     
-    public abstract double finalNota();
+    public abstract String finalNota();
     
     public abstract void calculoNota();   
 

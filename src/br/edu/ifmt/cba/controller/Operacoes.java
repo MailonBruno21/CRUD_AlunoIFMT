@@ -1,8 +1,10 @@
 package br.edu.ifmt.cba.controller;
 
 import static br.edu.ifmt.cba.controller.Busca.buscaVetor;
+import static br.edu.ifmt.cba.controller.Busca.buscar;
 import static br.edu.ifmt.cba.controller.Main.guardaAluno;
 import static br.edu.ifmt.cba.controller.Main.menu;
+import static br.edu.ifmt.cba.controller.Main.qtdAlunos;
 import br.edu.ifmt.cba.model.Aluno;
 import java.util.Scanner;
 
@@ -35,7 +37,7 @@ public class Operacoes {
                 excluir(aluno);
                 break;
             case 3:
-                
+                consultarNotas(aluno);
                 break;
             case 4:
                 menu();
@@ -118,7 +120,20 @@ public class Operacoes {
         
     }
     
-    public static void consultarNotas(){
+    public static void consultarNotas(Aluno aluno){
+       
         
+        
+                                
+                int buscaVetor = buscaVetor(guardaAluno, aluno);
+                if(buscaVetor == -1){
+                    System.out.println("Cadastro nao encontrado");
+                    menu();
+                }
+                
+                System.out.println("Nome: "+ guardaAluno[buscaVetor].getNome()+" Nota Final: "+ guardaAluno[buscaVetor].finalNota());
+          
+                
+            
     }
 }
